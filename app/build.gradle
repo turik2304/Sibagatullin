@@ -1,6 +1,8 @@
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -13,7 +15,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -29,6 +31,11 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+configurations {
+    all {
+        exclude group: 'org.json', module: 'json'
     }
 }
 
@@ -47,8 +54,20 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.fragment:fragment-ktx:1.2.5'
+    implementation "khttp:khttp:1.0.0"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.4.10"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.3.9'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation group: 'org.apache.commons', name: 'commons-math3', version: '3.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.9'
+    implementation "com.github.kittinunf.fuel:fuel-android:2.2.3"
+    implementation 'com.github.kittinunf.fuel:fuel-json:2.2.3'
+    implementation 'com.github.kittinunf.fuel:fuel:2.2.3'
 
-    //noinspection GradleCompatible
-    implementation 'com.android.support:design:28.0.0'
-//    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+
+
 }

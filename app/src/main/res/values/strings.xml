@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">DevelopersLifeApp</string>
+    <string name="app_name">Developers Life</string>
+    <string name="first_tab">First tab</string>
+    <string name="second_tab">Second tab</string>
+    <string name="third_tab">Third tab</string>
+    <string name="button">Button</string>
+    <string name="back">Back</string>
+    <string name="next_gif">Next GIF</string>
+    <string name="gif">GIF</string>
 </resources>
